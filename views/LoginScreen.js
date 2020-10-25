@@ -2,12 +2,10 @@ import React, { Component, useState } from 'react';
 import { StyleSheet, StatusBar, Text, View, FlatList, TextInput, TouchableHighlight } from 'react-native';
 import Constants from 'expo-constants';
 
-import onLogin from '../utils/functions';
-
-export default function LoginView(){
+export default function LoginScreen({ navigation }) {
     const [name, setName] = useState('testname');
     const [password, setPassword] = useState('pwd');
-    
+
     return (
         <View style={styles.container}>
           <View style={styles.column}>
@@ -23,7 +21,7 @@ export default function LoginView(){
             />
             <TouchableHighlight 
               style={styles.buttonStyle}
-              onClick={onLogin}>
+              onPress={() => navigation.navigate('Grades')}>
               <Text style={styles.buttonTextStyle}> Login </Text>
             </TouchableHighlight>
           </View>
@@ -34,17 +32,11 @@ export default function LoginView(){
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    marginTop: StatusBar.currentHeight || 0,
     paddingTop: Constants.statusBarHeight,
-    marginRight: 10,
-    marginLeft: 10,
+    marginRight: 20,
+    marginLeft: 20,
+    justifyContent: 'center',
     alignItems: 'center',
-  },
-  column: {
-    flexDirection: 'column',
-    marginTop: 10,
-    marginBottom: 10,
-    justifyContent: 'space-evenly',
   },
   textInputStyle: {
    height: 25, 

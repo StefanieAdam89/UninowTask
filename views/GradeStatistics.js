@@ -1,11 +1,11 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, StatusBar, Text, View } from 'react-native';
 import Constants from 'expo-constants';
 
-export default function GradeView() {
+export default function GradeStatistics() {
   return (
     <View style={styles.container}>
-      <Text>Grades</Text>
+      <Text>Statistics</Text>
     </View>
   );
 }
